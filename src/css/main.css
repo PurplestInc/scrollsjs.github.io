@@ -225,10 +225,6 @@ a:active {
   color: var(--alt-link-active-color);
 }
 
-a.active {
-  font-weight: bold;
-}
-
 pre {
   border-left: 4px solid var(--primary-color);
   color: #888;

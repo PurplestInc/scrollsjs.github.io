@@ -1,0 +1,9 @@
+{
+  "name" : "scrolls.js",
+  "short_name" : "scrolls.js",
+  "start_url" : "/?utm_source=homescreen",
+  "display" : "standalone",
+  "orientation" : "portrait",
+  "background_color" : "#AA88FF",
+  "theme_color" : "#AA88FF"
+}

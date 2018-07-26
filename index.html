@@ -44,7 +44,7 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/fontawesome.css" integrity="sha384-0b7ERybvrT5RZyD80ojw6KNKz6nIAlgOKXIcJ0CV7A6Iia8yt2y1bBfLBOwoc9fQ" crossorigin="anonymous">
   </head>
   <body>
-    <div class="primary-design is--shown">
+    <div class="primary-design">
       <div class="design">
         <span></span>
         <span></span>
@@ -94,13 +94,14 @@
       <h3 class="installation">Installation</h3>
       <p>You can install the libaray via npm:</p>
       <div>
-<pre><code>npm i scrolls.js</code></pre>
+<pre class="code"><code>npm i scrolls.js</code></pre>
       </div>
       <p>or via CDN:</p>
       <div>
-<pre><code>&lt;!-- Source Version --&gt;
+<pre class="code"><code>&lt;!-- Source Version --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.5/scrolls.js"&gt;&lt;/script&gt;
-&lt;!-- Minified Version --&gt;
+</code></pre>
+<pre class="code"><code>&lt;!-- Minified Version --&gt;
 &lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.5/scrolls.min.js"&gt;&lt;/script&gt;
 </code></pre>
       </div>
@@ -113,6 +114,116 @@ scrolls('h1', {
 });
 </code></pre>
       </div>
+      <h4>Back-To-Top Example</h4>
+      <p>HTML:</p>
+<pre class="code"><code>&lt;button class="btt js-btt"&gt;&#x25b2;&lt;/button&gt;</code></pre>
+      <p>CSS:</p>
+<pre class="code"><code>&lt;style&gt;
+.btt {
+  background: none;
+  background-color: rgba(0, 0, 0, 0.15);
+  border: 1px solid #fff;
+  bottom: -31px;
+  color: #fff;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  font-size: 0.85em;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  transition: all 0.1s linear;
+  -webkit-appearance: none !important;
+  width: 30px;
+}
+
+.btt.is--shown {
+  bottom: 10px;
+}
+
+.btt:hover {
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.btt:active {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+&lt;/style&gt;
+</code></pre>
+      <p>JS:</p>
+<pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.5/scrolls.min.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+/**
+ * Selects the back-to-top button.
+ */
+
+const bttButton = document.querySelector('.js-btt');
+
+/**
+ * Scrolls to the top of the page.
+ */
+
+const backToTop = () => {
+  scrolls(0);
+};
+
+/**
+ * Hides the back-to-top button.
+ */
+
+const hideBackToTop = () => {
+  if (window.pageYOffset < 20 && bttButton) {
+    bttButton.classList.remove('is--shown');
+  }
+};
+
+/**
+ * Shows the back-to-top button.
+ */
+
+const showBackToTop = () => {
+  if (window.pageYOffset >= 20 && bttButton) {
+    bttButton.classList.add('is--shown');
+
+    bttButton.addEventListener('click', () => {
+      backToTop();
+    });
+  }
+};
+
+/**
+ * Listens for the scroll event to occur and updates the back-to-top button
+ * accordingly.
+ */
+
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset < 20) {
+    hideBackToTop();
+  } else {
+    showBackToTop();
+  }
+});
+
+/**
+ * Code setup to execute immediately including initializing events, and their
+ * liseners.
+ */
+
+(() => {
+  if (bttButton) {
+    bttButton.addEventListener('click', () => {
+      backToTop();
+    });
+
+    if (window.pageYOffset >= 20) {
+      bttButton.classList.add('is--shown');
+    }
+  }
+})();
+&lt;/script&gt;
+</code></pre>
       <h2 class="documentation">Documentation</h2>
       <div>
 <pre><code>// Default customizeable variables via an object within the second parameter
@@ -143,7 +254,7 @@ scrolls('h1', {
     </main>
     <button class="btt js-btt"><span class="fas fa-angle-up"></span></button>
     <footer>Copyright &copy; <span class="js-year"></span> <a class="brand-color" target="_blank" title="Purplest, Inc." href="https://purplest.com?ref=scrollsjs.com">Purplest, Inc.</a><span> | </span><span class="attribution">Built by: <a class="brand-color" target="_blank" title="Rob Dukarski's Portfolio" href="https://rob.dukar.ski?ref=scrollsjs.com">Rob Dukarski</a></span></footer>
-    <div class="secondary-design is--shown">
+    <div class="secondary-design">
       <div class="design">
         <span></span>
         <span></span>

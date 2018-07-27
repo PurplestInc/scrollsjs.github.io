@@ -3,7 +3,7 @@
  *               scrolls.js website.
  * @author Rob Dukarski <rob@purplest.com> (https://github.com/RobDukarski)
  * @copyright 2018 Purplest, Inc.
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 const bttButton = document.querySelector('.js-btt');
@@ -34,10 +34,6 @@ const hideBackToTop = () => {
 const showBackToTop = () => {
   if (window.pageYOffset >= 20 && bttButton) {
 		bttButton.classList.add('is--shown');
-
-		bttButton.addEventListener('click', () => {
-			backToTop();
-		});
 	}
 };
 

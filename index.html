@@ -186,10 +186,6 @@ const hideBackToTop = () => {
 const showBackToTop = () => {
   if (window.pageYOffset >= 20 && bttButton) {
     bttButton.classList.add('is--shown');
-
-    bttButton.addEventListener('click', () => {
-      backToTop();
-    });
   }
 };
 

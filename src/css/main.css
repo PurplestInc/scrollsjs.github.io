@@ -165,7 +165,12 @@ ul {
   position: relative;
 }
 
-::-moz-selection,
+::-moz-selection {
+  background: var(--primary-color);
+  color: var(--secondary-text-color);
+  text-shadow: none !important;
+}
+
 ::selection {
   background: var(--primary-color);
   color: var(--secondary-text-color);

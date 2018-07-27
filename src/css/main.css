@@ -10,7 +10,7 @@
  * (https://github.com/RobDukarski)
  * (https://github.com/PurplestInc)
  *
- * Version: 1.0.4 (07/27/2018)
+ * Version: 1.0.5 (07/27/2018)
  *
  * Copyright (c) 2018 Purplest, Inc.
  * (https://purplest.com/)
@@ -31,7 +31,7 @@
  */
 
  :root {
-	--primary-color: #a8f;
+  --primary-color: #a8f;
   --primary-dark-color: #9c74ff;
   --primary-light-color: #ae8eff;
   --secondary-color: #6634e5;
@@ -43,24 +43,26 @@
   --primary-design-tertiary-alpha-color: rgba(170,136,255,0);
   --primary-design-quarternary-alpha-color: rgba(102,52,229,0.25);
   --primary-design-quinary-alpha-color: rgba(102,52,229,0.1);
-	--primary-design-senary-alpha-color: rgba(102,52,229,0);
+  --primary-design-senary-alpha-color: rgba(102,52,229,0);
 
   --primary-design-primary-color: var(--primary-color);
-	--primary-design-secondary-color: var(--secondary-color);
+  --primary-design-secondary-color: var(--secondary-color);
 
   --secondary-design-primary-alpha-color: rgba(102,52,229,0.5);
   --secondary-design-secondary-alpha-color: rgba(102,52,229,0.3);
   --secondary-design-tertiary-alpha-color: rgba(102,52,229,0);
   --secondary-design-quarternary-alpha-color: rgba(170,136,255,0.5);
   --secondary-design-quinary-alpha-color: rgba(170,136,255,0.3);
-	--secondary-design-senary-alpha-color: rgba(170,136,255,0);
+  --secondary-design-senary-alpha-color: rgba(170,136,255,0);
 
   --secondary-design-primary-color: var(--primary-color);
-	--secondary-design-secondary-color: var(--secondary-color);
+  --secondary-design-secondary-color: var(--secondary-color);
+  
+  --design-background-color: #aaa;
 
   --design-primary-offset-alpha-color: rgba(234,225,255,0.45);
   --design-secondary-offset-alpha-color: rgba(234,225,255,0.15);
-	--design-tertiary-offset-alpha-color: rgba(234,225,255,0);
+  --design-tertiary-offset-alpha-color: rgba(234,225,255,0);
 
   --design-primary-offset-color: #b79aff;
   --design-secondary-offset-color: #bba0ff;
@@ -108,19 +110,19 @@
 
   --container-width: 960px;
 
-	--gutter-width: 20px;
+  --gutter-width: 20px;
 
-  --primary-design-height: 100px;
+  --primary-design-height: 150px;
   --primary-design-position-top: -125px;
   --primary-design-skew: 5deg;
 
-  --primary-design-height-inner: 125px;
-  --primary-design-position-top-inner: 0;
-  --primary-design-skew-inner: -9deg;
+  --secondary-design-height: 300px;
+  --secondary-design-position-top: -850px;
+  --secondary-design-skew: -25deg;
 
-  --secondary-design-height: 150px;
-  --secondary-design-position-top: -1000px;
-  --secondary-design-skew: 5deg;
+  --tertiary-design-height: 200px;
+  --tertiary-design-position-top: -1650px;
+  --tertiary-design-skew: 15deg;
 }
 
 /**
@@ -129,7 +131,6 @@
 
 html {
   box-sizing: border-box;
-  height: 100%;
 }
 
 *,
@@ -144,17 +145,21 @@ html {
 *:hover,
 *:focus,
 *:active {
-	outline: none;
+  outline: none;
 }
 
 button {
-	-webkit-appearance: none !important;
-	padding: 0;
+  -webkit-appearance: none !important;
+  padding: 0;
 }
 
 p {
   margin-bottom: var(--gutter-width);
   margin-top: 0;
+}
+
+p + p:last-child {
+  margin-bottom: 0;
 }
 
 ul {
@@ -207,7 +212,6 @@ body {
   font-size: var(--base-font-size);
   -webkit-font-smoothing: antialiased;
   font-weight: 300;
-  height: 100%;
   line-height: var(--base-line-height);
   margin: 0;
   -webkit-overflow-scrolling: touch;
@@ -232,20 +236,20 @@ a:active {
 }
 
 pre {
-	background-color: var(--active-color);
-	border-left: 4px solid var(--primary-color);
-	box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
+  background-color: var(--active-color);
+  border-left: 4px solid var(--primary-color);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
   color: #888;
-	margin: var(--gutter-width) 0;
-	overflow-x: auto;
+  margin: var(--gutter-width) 0;
+  overflow-x: auto;
   padding: var(--gutter-width);
 }
 
 .code {
   -moz-user-select: all;
   -ms-user-select: element;
-	-webkit-user-select: all;
-	user-select: all;
+  -webkit-user-select: all;
+  user-select: all;
 }
 
 h1,
@@ -260,12 +264,14 @@ h4 {
 }
 
 h1 {
-	font-size: 2.25em;
-	margin: 50px 0;
+  font-size: 2.25em;
+  margin: 50px 0;
 }
 
 h2 {
+  border-bottom: 2px solid var(--primary-color);
   font-size: 1.875em;
+  padding-bottom: 16px;
 }
 
 h3 {
@@ -279,62 +285,76 @@ h4 {
 header,
 main,
 footer {
-	background-color: var(--secondary-text-color);
-	box-shadow: 0 0 5px 0   rgba(0, 0, 0, 0.25),
-	            0 0 0   1px rgba(0, 0, 0, 0.1);
-	margin: 0 auto;
-	max-width: 960px;
-	padding: var(--gutter-width);
-	width: 90%;
+  background-color: var(--secondary-text-color);
+  box-shadow: 0 0 5px 0   rgba(0, 0, 0, 0.25),
+              0 0 0   1px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+  max-width: 960px;
+  padding: var(--gutter-width);
+  width: 90%;
 }
 
 header,
 footer {
-	text-align: center;
+  text-align: center;
 }
 
 .stats {
-	margin-bottom: 40px;
-	padding: 0;
+  margin-bottom: 40px;
+  padding: 0;
 }
 
 .stats li {
-	display: inline-block;
-	margin: 0 2px;
+  display: inline-block;
+  margin: 0 2px;
 }
 
 nav a {
-	margin: 10px;
+  margin: 10px;
 }
 
 .btt {
-	background-color: rgba(170, 136, 255, 0.75);
-	border: 1px solid var(--secondary-text-color);
-	bottom: -31px;
-	color: var(--secondary-text-color);
-	cursor: pointer;
+  background-color: rgba(170, 136, 255, 0.75);
+  border: 1px solid var(--secondary-text-color);
+  bottom: -31px;
+  color: var(--secondary-text-color);
+  cursor: pointer;
   font-family: var(--base-font-family);
-	font-size: 0.85em;
-	height: 30px;
-	line-height: 20px;
-	padding: 5px;
-	position: fixed;
-	right: 10px;
-	text-align: center;
-	transition: all 0.1s linear;
-	width: 30px;
+  font-size: 0.85em;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px;
+  position: fixed;
+  right: 10px;
+  text-align: center;
+  transition: all 0.1s linear;
+  width: 30px;
 }
 
 .btt.is--shown {
-	bottom: 10px;
+  bottom: 10px;
 }
 
-.btt:hover {
-	background-color: rgba(174, 142, 255, 0.85);
+.btt:hover,
+.section-btt:hover {
+  background-color: rgba(174, 142, 255, 0.85);
 }
 
-.btt:active {
-	background-color: rgba(156, 116, 255, 0.75);
+.btt:active,
+.section-btt:active {
+  background-color: rgba(156, 116, 255, 0.75);
+}
+
+.section-btt {
+  background-color: rgba(170, 136, 255, 0.75);
+  border: 1px solid var(--secondary-text-color);
+  color: var(--secondary-text-color);
+  cursor: pointer;
+  float: right;
+  font-size: 0.5em;
+  padding: 2px 4px;
+  position: relative;
+  top: 7px;
 }
 
 /**
@@ -342,8 +362,22 @@ nav a {
  */
 
 .primary-design,
+.secondary-design,
+.tertiary-design {
+  position: absolute;
+  width: 100%;
+}
+
+.primary-design {
+  top: 0;
+}
+
 .secondary-design {
-	position: relative;
+  bottom: 50%;
+}
+
+.tertiary-design {
+  bottom: 0;
 }
 
 .design {
@@ -360,7 +394,7 @@ nav a {
 
 .primary-design .design {
   background: linear-gradient(var(--primary-design-primary-color), var(--primary-design-secondary-color) 10%, var(--design-primary-offset-color) 45%, var(--design-secondary-offset-color) 60%, var(--design-tertiary-offset-color) 75%);
-  background-color: #aaa;
+  background-color: var(--design-background-color);
   grid: repeat(5, var(--primary-design-height))/repeat(10, 1fr);
   top: var(--primary-design-position-top);
   transform: skewY(var(--primary-design-skew));
@@ -392,19 +426,13 @@ nav a {
   grid-area: auto/1/-1/-1;
 }
 
-.inner .primary-design .design {
-  grid: repeat(5, var(--primary-design-height-inner))/repeat(10, 1fr);
-  top: var(--primary-design-position-top-inner);
-  transform: skewY(var(--primary-design-skew-inner));
-}
-
 /**
  * Secondary design
  */
 
 .secondary-design .design {
-  background: linear-gradient(var(--secondary-design-primary-color), var(--secondary-design-secondary-color) 20%, var(--design-primary-offset-color) 50%, var(--design-secondary-offset-color) 60%, var(--design-tertiary-offset-color) 75%);
-  background-color: #aaa;
+  background: linear-gradient(var(--secondary-design-primary-color), var(--primary-design-secondary-color) 20%, var(--design-primary-offset-color) 50%, var(--design-secondary-offset-color) 60%, var(--design-tertiary-offset-color) 75%);
+  background-color: var(--design-background-color);
   grid: repeat(5, var(--secondary-design-height))/repeat(10, 1fr);
   top: var(--secondary-design-position-top);
   transform: skewY(var(--secondary-design-skew));
@@ -417,7 +445,7 @@ nav a {
 }
 
 .secondary-design .design span:nth-child(2) {
-  background: linear-gradient(60grad, var(--secondary-design-tertiary-alpha-color), var(--secondary-design-secondary-alpha-color) 75%, var(--secondary-design-primary-alpha-color));
+  background: linear-gradient(60grad, var(--secondary-design-tertiary-alpha-color), var(--primary-design-secondary-alpha-color) 75%, var(--secondary-design-primary-alpha-color));
   grid-area: 3/span 10/auto/-1;
 }
 
@@ -427,11 +455,49 @@ nav a {
 }
 
 .secondary-design .design span:nth-child(4) {
-  background: linear-gradient(60grad, var(--secondary-design-quarternary-alpha-color), var(--secondary-design-quinary-alpha-color) 75%, var(--secondary-design-senary-alpha-color));
+  background: linear-gradient(60grad, var(--primary-design-quarternary-alpha-color), var(--secondary-design-quinary-alpha-color) 75%, var(--primary-design-senary-alpha-color));
   grid-area: 4/span 10/auto/-1;
 }
 
 .secondary-design .design span:nth-child(5) {
+  background: linear-gradient(100grad, rgba(255, 255, 255, 0.25) 5%, var(--primary-design-primary-alpha-color) 25%);
+  grid-area: auto/1/-1/-1;
+}
+
+/**
+ * Tertiary design
+ */
+
+.tertiary-design .design {
+  background: linear-gradient(var(--secondary-design-primary-color), var(--secondary-design-secondary-color) 20%, var(--design-primary-offset-color) 50%, var(--design-secondary-offset-color) 60%, var(--design-tertiary-offset-color) 75%);
+  background-color: var(--design-background-color);
+  grid: repeat(5, var(--tertiary-design-height))/repeat(10, 1fr);
+  top: var(--tertiary-design-position-top);
+  transform: skewY(var(--tertiary-design-skew));
+  transform-origin: 0;
+}
+
+.tertiary-design .design span:nth-child(1) {
+  background: linear-gradient(100grad, var(--design-primary-offset-alpha-color), var(--design-secondary-offset-alpha-color) 20%, var(--design-tertiary-offset-alpha-color));
+  grid-column: span 3;
+}
+
+.tertiary-design .design span:nth-child(2) {
+  background: linear-gradient(60grad, var(--secondary-design-tertiary-alpha-color), var(--secondary-design-secondary-alpha-color) 75%, var(--secondary-design-primary-alpha-color));
+  grid-area: 3/span 10/auto/-1;
+}
+
+.tertiary-design .design span:nth-child(3) {
+  grid-column: span 5;
+  grid-row: 4;
+}
+
+.tertiary-design .design span:nth-child(4) {
+  background: linear-gradient(60grad, var(--secondary-design-quarternary-alpha-color), var(--secondary-design-quinary-alpha-color) 75%, var(--secondary-design-senary-alpha-color));
+  grid-area: 4/span 10/auto/-1;
+}
+
+.tertiary-design .design span:nth-child(5) {
   background: linear-gradient(100grad, rgba(255, 255, 255, 0.25) 5%, var(--secondary-design-primary-alpha-color) 25%);
   grid-area: auto/1/-1/-1;
 }

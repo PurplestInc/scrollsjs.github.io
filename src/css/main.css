@@ -10,7 +10,7 @@
  * (https://github.com/RobDukarski)
  * (https://github.com/PurplestInc)
  *
- * Version: 1.0.5 (07/27/2018)
+ * Version: 1.0.6 (07/27/2018)
  *
  * Copyright (c) 2018 Purplest, Inc.
  * (https://purplest.com/)
@@ -265,7 +265,7 @@ h4 {
 
 h1 {
   font-size: 2.25em;
-  margin: 50px 0;
+  margin: 30px 0 50px;
 }
 
 h2 {

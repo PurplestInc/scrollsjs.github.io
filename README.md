@@ -1,2 +1,2 @@
 # scrollsjs.github.io
-[scrolls.js landing page](https://scrollsjs.com)
+[scrolls.js landing page.](https://scrollsjs.com)

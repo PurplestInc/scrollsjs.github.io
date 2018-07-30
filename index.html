@@ -66,7 +66,7 @@
           <a href="https://www.npmjs.com/package/scrolls.js#installation" title="Go to the installation section of the NPM landing page for scrolls.js"><img src="https://img.shields.io/npm/v/scrolls.js.svg?colorB=a8f" alt="Latest NPM Version"></a>
         </li>
         <li>
-          <a href="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.min.js?compression=gzip" title="Copy this link for the direct gzipped CDN file for scrolls.min.js"><img src="https://img.shields.io/badge/gzip%20size-392%20B-a8f.svg" alt="gzip size: 408 bytes"></a>
+          <a href="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.min.js?compression=gzip" title="Copy this link for the direct gzipped CDN file for scrolls.min.js"><img src="https://img.shields.io/badge/gzip%20size-428%20B-a8f.svg" alt="gzip size: 428 bytes"></a>
         </li>
       </ul>
       <nav class="js-nav">
@@ -82,9 +82,10 @@
       </nav>
     </header>
     <main>
-      <h2 class="basic-info">Basic Info <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="basic-info">Basic Info <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <p>A smooth scrolling library built to provide convenience for developers.</p>
-      <h2 class="features">Features <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+			<p>If you like this project you may like our <a href="https://durationsjs.com" title="durations.js - animated durations library">durations.js</a> animated durations <a href="https://github.com/PurplestInc/duartions.js" title="GitHub repo for durations.js">library</a>!</p>
+      <h2 class="features">Features <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <ul>
         <li>Plug-and-play (unless you have other JavaScript that uses <code>scrolls()</code> already...)</li>
         <li>Number or selector-based targeting</li>
@@ -92,16 +93,16 @@
         <li>Customizeable duration of movement and offset position from the stop position</li>
         <li>Fully open source</li>
       </ul>
-      <h2 class="getting-started">Getting Started <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="getting-started">Getting Started <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <h3 class="installation">Installation</h3>
       <p>You can install the libaray via npm:</p>
 <pre class="code"><code>npm i scrolls.js</code></pre>
       <p>or via CDN:</p>
 <pre class="code"><code>&lt;!-- Source Version --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.js"&gt;&lt;/script&gt;
 </code></pre>
 <pre class="code"><code>&lt;!-- Minified Version --&gt;
-&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.min.js"&gt;&lt;/script&gt;
 </code></pre>
       <h3 class="usage">Usage</h3>
       <div>
@@ -112,7 +113,7 @@ scrolls('h1', {
 });
 </code></pre>
       </div>
-      <h2 class="examples">Examples <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="examples">Examples <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <h3>Back-To-Top</h3>
       <p>HTML:</p>
 <pre class="code"><code>&lt;button class="btt js-btt"&gt;&#x25b2;&lt;/button&gt;</code></pre>
@@ -152,7 +153,7 @@ scrolls('h1', {
 &lt;/style&gt;
 </code></pre>
       <p>JS:</p>
-<pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.min.js"&gt;&lt;/script&gt;
+<pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 /**
  * Selects the back-to-top button.
@@ -252,7 +253,7 @@ nav a {
 &lt;/style&gt;
 </code></pre>
       <p>JS:</p>
-<pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.min.js"&gt;&lt;/script&gt;
+<pre class="code"><code>&lt;script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.min.js"&gt;&lt;/script&gt;
 &lt;script&gt;
 const links = document.querySelectorAll('.js-nav a');
 
@@ -280,7 +281,7 @@ const links = document.querySelectorAll('.js-nav a');
 &lt;/script&gt;
 </code></pre>
       <p>That's it! If you copied the HTML and CSS from the Back-To-Top example from above you should have that functionality as well. Unless you have other code that would interfere with the selectors/styling you should be able to just plug-and-play with these examples!!</p>
-      <h2 class="documentation">Documentation <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="documentation">Documentation <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
 <pre><code>// Default customizeable variables via an object within the second parameter
 // of the function.
 
@@ -300,15 +301,15 @@ scrolls('h1', {
 // the scrolling event, for example 0 would be the top of the page, or h1 to
 // scroll to the first h1 element.
 </code></pre>
-      <h2 class="changelog">Changelog <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="changelog">Changelog <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <p>Please see <a href="https://github.com/PurplestInc/scrolls.js/blob/master/CHANGELOG.md" title="CHANGELOG.md">CHANGELOG.md</a> for details.</p>
-      <h2 class="license">License <button class="section-btt js-section-btt fas fa-angle-up"></button></h2>
+      <h2 class="license">License <button class="section-btt js-section-btt fas fa-angle-up" title="Click to go back to the navigation bar, if necessary."></button></h2>
       <p>MIT</p>
-      <p>Copyright &copy; 2018 Purplest, Inc.</p>
+      <p>Copyright &copy; <span class="js-year">2018</span> Purplest, Inc.</p>
     </main>
-    <button class="btt js-btt fas fa-angle-up"></button>
+    <button class="btt js-btt fas fa-angle-up" title="Click to go back to the top of the page."></button>
     <footer>
-      <p>Copyright &copy; <span class="js-year"></span> <a class="brand-color" target="_blank" title="Purplest, Inc." href="https://purplest.com?ref=scrollsjs.com">Purplest, Inc.</a></p>
+      <p>Copyright &copy; <span class="js-year">2018</span> <a class="brand-color" target="_blank" title="Purplest, Inc." href="https://purplest.com?ref=scrollsjs.com">Purplest, Inc.</a></p>
       <p>Built by: <a class="brand-color" target="_blank" title="Rob Dukarski's Portfolio" href="https://rob.dukar.ski?ref=scrollsjs.com">Rob Dukarski</a></p>
     </footer>
     <div class="secondary-design">
@@ -329,7 +330,7 @@ scrolls('h1', {
         <span></span>
       </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.11/scrolls.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/scrolls.js@1.0.15/scrolls.min.js"></script>
     <script src="static/js/main.js"></script>
   </body>
 </html>

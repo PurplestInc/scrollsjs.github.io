@@ -30,7 +30,7 @@
  * octonary, nonary, denary
  */
 
- :root {
+:root {
   --primary-color: #a8f;
   --primary-dark-color: #9c74ff;
   --primary-light-color: #ae8eff;
@@ -68,17 +68,6 @@
   --design-secondary-offset-color: #bba0ff;
   --design-tertiary-offset-color: #c3acff;
 
-  --primary-gradient-color: var(--primary-color);
-  --secondary-gradient-color: var(--secondary-color);
-
-  --primary-gradient-active-color: var(--primary-dark-color);
-  --primary-gradient-hover-color: var(--primary-light-color);
-  --secondary-gradient-active-color: var(--secondary-dark-color);
-  --secondary-gradient-hover-color: var(--secondary-light-color);
-
-  --gradient-dark-text-shadow-color: rgba(255,255,255,0.05);
-  --gradient-light-text-shadow-color: rgba(25,25,25,0.5);
-
   --primary-text-color: #000;
   --secondary-text-color: #fff;
   --tertiary-text-color: #1a1a1a;
@@ -101,9 +90,6 @@
   --base-font-family: 'Arial', sans-serif;
   --base-font-size: 16px;
   --base-line-height: 1.78em;
-
-  --primary-border-color: rgba(170, 136, 255, 0.35);
-  --secondary-border-color: rgba(102, 52, 229, 0.75);
 
   --primary-border-radius: 5px;
   --secondary-border-radius: 3px;
@@ -289,7 +275,7 @@ footer {
   box-shadow: 0 0 5px 0   rgba(0, 0, 0, 0.25),
               0 0 0   1px rgba(0, 0, 0, 0.1);
   margin: 0 auto;
-  max-width: 960px;
+  max-width: var(--container-width);
   padding: var(--gutter-width);
   width: 90%;
 }

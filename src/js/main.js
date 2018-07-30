@@ -3,13 +3,13 @@
  *               scrollsjs.com website.
  * @author Rob Dukarski <rob@purplest.com> (https://github.com/RobDukarski)
  * @copyright 2018 Purplest, Inc.
- * @version 1.0.3
+ * @version 1.0.4
  */
 
 const bttButton = document.querySelector('.js-btt');
-const sectionBttButtons = document.querySelectorAll('.js-section-btt');
 const links = document.querySelectorAll('.js-nav a');
-const year = document.querySelector('.js-year');
+const sectionBttButtons = document.querySelectorAll('.js-section-btt');
+const years = document.querySelectorAll('.js-year');
 
 /**
  * Scrolls to the top of the page.
@@ -76,8 +76,10 @@ window.addEventListener('scroll', () => {
     });
   }
 
-  if (year) {
-    year.innerText = new Date().getFullYear();
+  if (years) {
+    years.forEach((year) => {
+      year.innerText = new Date().getFullYear();
+    });
   }
 
   if (links) {

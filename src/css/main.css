@@ -10,9 +10,9 @@
  * (https://github.com/RobDukarski)
  * (https://github.com/PurplestInc)
  *
- * Version: 1.0.6 (07/27/2018)
+ * Version: 1.0.7 (02/20/2019)
  *
- * Copyright (c) 2018 Purplest, Inc.
+ * Copyright (c) 2019 Purplest, Inc.
  * (https://purplest.com/)
  * ============================================================================
  */
@@ -30,84 +30,84 @@
  * octonary, nonary, denary
  */
 
-:root {
-  --primary-color: #a8f;
-  --primary-dark-color: #9c74ff;
-  --primary-light-color: #ae8eff;
-  --secondary-color: #6634e5;
-  --secondary-dark-color: #5d28e3;
-  --secondary-light-color: #6e3ee6;
+html {
+  --primary-hue: 257;
+  --primary-saturation: 100%;
+  --primary-lightness: 77%;
 
-  --primary-design-primary-alpha-color: rgba(170,136,255,0.25);
-  --primary-design-secondary-alpha-color: rgba(170,136,255,0.1);
-  --primary-design-tertiary-alpha-color: rgba(170,136,255,0);
-  --primary-design-quarternary-alpha-color: rgba(102,52,229,0.25);
-  --primary-design-quinary-alpha-color: rgba(102,52,229,0.1);
-  --primary-design-senary-alpha-color: rgba(102,52,229,0);
+  --primary-color: hsl(var(--primary-hue), var(--primary-saturation), var(--primary-lightness));
+  --primary-color-dark: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) * 0.9375));
+  --primary-color-light: hsl(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) * 1.0625));
+
+  --secondary-hue: 257;
+  --secondary-saturation: 77%;
+  --secondary-lightness: 55%;
+
+  --secondary-color: hsl(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness));
+  --secondary-color-dark: hsl(var(--secondary-hue), var(--secondary-saturation), calc(var(--secondary-lightness) * 0.6875));
+  --secondary-color-light: hsl(var(--secondary-hue), var(--secondary-saturation), calc(var(--secondary-lightness) * 0.8125));
+
+  --primary-design-primary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.25);
+  --primary-design-secondary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.1);
+  --primary-design-tertiary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0);
+  --primary-design-quarternary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0.25);
+  --primary-design-quinary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0.1);
+  --primary-design-senary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0);
 
   --primary-design-primary-color: var(--primary-color);
   --primary-design-secondary-color: var(--secondary-color);
 
-  --secondary-design-primary-alpha-color: rgba(102,52,229,0.5);
-  --secondary-design-secondary-alpha-color: rgba(102,52,229,0.3);
-  --secondary-design-tertiary-alpha-color: rgba(102,52,229,0);
-  --secondary-design-quarternary-alpha-color: rgba(170,136,255,0.5);
-  --secondary-design-quinary-alpha-color: rgba(170,136,255,0.3);
-  --secondary-design-senary-alpha-color: rgba(170,136,255,0);
+  --secondary-design-primary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0.5);
+  --secondary-design-secondary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0.3);
+  --secondary-design-tertiary-alpha-color: hsla(var(--secondary-hue), var(--secondary-saturation), var(--secondary-lightness), 0);
+  --secondary-design-quarternary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.5);
+  --secondary-design-quinary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.3);
+  --secondary-design-senary-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0);
 
   --secondary-design-primary-color: var(--primary-color);
   --secondary-design-secondary-color: var(--secondary-color);
-  
-  --design-background-color: #aaa;
 
-  --design-primary-offset-alpha-color: rgba(234,225,255,0.45);
-  --design-secondary-offset-alpha-color: rgba(234,225,255,0.15);
-  --design-tertiary-offset-alpha-color: rgba(234,225,255,0);
+  --design-background-color: hsl(0, 0%, 67%);
 
-  --design-primary-offset-color: #b79aff;
-  --design-secondary-offset-color: #bba0ff;
-  --design-tertiary-offset-color: #c3acff;
+  --design-primary-offset-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), 94%, 0.45);
+  --design-secondary-offset-alpha-color: hsla(var(--primary-hue), var(--primary-saturation) 94%, 0.15);
+  --design-tertiary-offset-alpha-color: hsla(var(--primary-hue), var(--primary-saturation), 94%, 0);
 
-  --primary-text-color: #000;
-  --secondary-text-color: #fff;
-  --tertiary-text-color: #1a1a1a;
+  --design-primary-offset-color: hsl(var(--primary-hue), var(--primary-saturation), 80%);
+  --design-secondary-offset-color: hsl(var(--primary-hue), var(--primary-saturation), 81%);
+  --design-tertiary-offset-color: hsl(var(--primary-hue), var(--primary-saturation), 84%);
 
-  --active-color: #f5f5f5;
-  --brand-color: #6b00b9;
-  --hover-color: var(--secondary-text-color);
-  --normal-color: #fafafa;
+  --primary-text-color: hsl(0, 0%, 0%);
+  --secondary-text-color: hsl(0, 0%, 100%);
 
-  --link-active-color: var(--active-color);
-  --link-normal-color: var(--normal-color);
-  --link-hover-color: var(--hover-color);
+  --bg-color: hsl(0, 0%, 96%);
+  --brand-color: hsl(275, 100%, 36%);
 
-  --link--text-shadow: 0 -1px 0 var(--secondary-color);
-
-  --alt-link-active-color: var(--secondary-dark-color);
-  --alt-link-normal-color: var(--secondary-color);
-  --alt-link-hover-color: var(--secondary-light-color);
+  --link-color-active: var(--secondary-color-dark);
+  --link-color-hover: var(--secondary-color-light);
+  --link-color-normal: var(--secondary-color);
 
   --base-font-family: 'Arial', sans-serif;
   --base-font-size: 16px;
-  --base-line-height: 1.78em;
+  --base-line-height: 1.78rem;
 
-  --primary-border-radius: 5px;
-  --secondary-border-radius: 3px;
+  --primary-border-radius: 0.313rem;
+  --secondary-border-radius: 0.188rem;
 
-  --container-width: 960px;
+  --container-width: 60rem;
 
-  --gutter-width: 20px;
+  --gutter-width: 1.25rem;
 
-  --primary-design-height: 150px;
-  --primary-design-position-top: -125px;
+  --primary-design-height: 9.375rem;
+  --primary-design-position-top: -7.813;
   --primary-design-skew: 5deg;
 
-  --secondary-design-height: 300px;
-  --secondary-design-position-top: -850px;
+  --secondary-design-height: 18.75rem;
+  --secondary-design-position-top: -53.125rem;
   --secondary-design-skew: -25deg;
 
-  --tertiary-design-height: 200px;
-  --tertiary-design-position-top: -1650px;
+  --tertiary-design-height: 12.5rem;
+  --tertiary-design-position-top: -103.125rem;
   --tertiary-design-skew: 15deg;
 }
 
@@ -152,7 +152,7 @@ ul {
   margin: 0;
   margin-bottom: var(--gutter-width);
   padding: 0;
-  padding-left: 44px;
+  padding-left: 2.75rem;
   position: relative;
 }
 
@@ -189,10 +189,7 @@ ul {
  */
 
 body {
-  background: var(--active-color);
-  background-attachment: fixed;
-  background-position: center top;
-  background-size: cover;
+  background-color: var(--bg-color);
   color: var(--primary-text-color);
   font-family: var(--base-font-family);
   font-size: var(--base-font-size);
@@ -209,23 +206,23 @@ body {
 
 a:link,
 a:visited {
-  color: var(--alt-link-normal-color);
+  color: var(--link-color-normal);
   word-break: keep-all;
 }
 
 a:hover {
-  color: var(--alt-link-hover-color);
+  color: var(--link-color-hover);
 }
 
 a:active {
-  color: var(--alt-link-active-color);
+  color: var(--link-color-active);
 }
 
 pre {
-  background-color: var(--active-color);
-  border-left: 4px solid var(--primary-color);
-  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.1);
-  color: #888;
+  background-color: var(--bg-color);
+  border-left: 0.25rem solid var(--primary-color);
+  box-shadow: inset 0 0 0 0.063rem hsla(0, 0%, 0%, 0.1);
+  color: hsl(0, 0%, 53%);
   margin: var(--gutter-width) 0;
   overflow-x: auto;
   padding: var(--gutter-width);
@@ -250,30 +247,30 @@ h4 {
 }
 
 h1 {
-  font-size: 2.25em;
-  margin: 30px 0 50px;
+  font-size: 2.25rem;
+  margin: 1.875rem 0 3.125rem;
 }
 
 h2 {
-  border-bottom: 2px solid var(--primary-color);
-  font-size: 1.875em;
-  padding-bottom: 16px;
+  border-bottom: 0.125rem solid var(--primary-color);
+  font-size: 1.875rem;
+  padding-bottom: 1rem;
 }
 
 h3 {
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 1.125em;
+  font-size: 1.125rem;
 }
 
 header,
 main,
 footer {
   background-color: var(--secondary-text-color);
-  box-shadow: 0 0 5px 0   rgba(0, 0, 0, 0.25),
-              0 0 0   1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.313rem 0        hsla(0, 0%, 0%, 0.25),
+              0 0 0        0.063rem hsla(0, 0%, 0%, 0.1);
   margin: 0 auto;
   max-width: var(--container-width);
   padding: var(--gutter-width);
@@ -286,61 +283,62 @@ footer {
 }
 
 .stats {
-  margin-bottom: 40px;
+  margin-bottom: 2.5rem;
   padding: 0;
 }
 
 .stats li {
   display: inline-block;
-  margin: 0 2px;
+  margin: 0 0.125rem;
 }
 
 nav a {
-  margin: 10px;
+  margin: 0.625rem;
 }
 
 .btt {
-  background-color: rgba(170, 136, 255, 0.75);
-  border: 1px solid var(--secondary-text-color);
-  bottom: -31px;
+  background-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.75);
+  border: 0.063rem solid var(--secondary-text-color);
+  bottom: -1.938rem;
   color: var(--secondary-text-color);
-  cursor: pointer;
+  cursor: default;
   font-family: var(--base-font-family);
-  font-size: 0.85em;
-  height: 30px;
-  line-height: 20px;
-  padding: 5px;
+  font-size: 1rem;
+  height: 1.875rem;
+  line-height: 1.25rem;
+  outline: none;
+  padding: 0.313rem;
   position: fixed;
-  right: 10px;
+  right: 0.625rem;
   text-align: center;
   transition: all 0.1s linear;
-  width: 30px;
+  width: 1.875rem;
 }
 
 .btt.is--shown {
-  bottom: 10px;
+  bottom: 0.625rem;
 }
 
 .btt:hover,
 .section-btt:hover {
-  background-color: rgba(174, 142, 255, 0.85);
+  background-color: hsla(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) * 1.04), 0.85);
 }
 
 .btt:active,
 .section-btt:active {
-  background-color: rgba(156, 116, 255, 0.75);
+  background-color: hsla(var(--primary-hue), var(--primary-saturation), calc(var(--primary-lightness) * 0.96), 0.75);
 }
 
 .section-btt {
-  background-color: rgba(170, 136, 255, 0.75);
-  border: 1px solid var(--secondary-text-color);
+  background-color: hsla(var(--primary-hue), var(--primary-saturation), var(--primary-lightness), 0.75);
+  border: 0.063rem solid var(--secondary-text-color);
   color: var(--secondary-text-color);
-  cursor: pointer;
+  cursor: default;
   float: right;
-  font-size: 0.5em;
-  padding: 2px 4px;
+  font-size: 0.75rem;
+  padding: 0.125rem 0.25rem;
   position: relative;
-  top: 7px;
+  top: 0.438rem;
 }
 
 /**
@@ -408,7 +406,7 @@ nav a {
 }
 
 .primary-design .design span:nth-child(5) {
-  background: linear-gradient(100grad, rgba(255, 255, 255, 0.25) 5%, var(--primary-design-primary-alpha-color) 25%);
+  background: linear-gradient(100grad, hsla(0, 0%, 100%, 0.25) 5%, var(--primary-design-primary-alpha-color) 25%);
   grid-area: auto/1/-1/-1;
 }
 
@@ -446,7 +444,7 @@ nav a {
 }
 
 .secondary-design .design span:nth-child(5) {
-  background: linear-gradient(100grad, rgba(255, 255, 255, 0.25) 5%, var(--primary-design-primary-alpha-color) 25%);
+  background: linear-gradient(100grad, hsla(0, 0%, 100%, 0.25) 5%, var(--primary-design-primary-alpha-color) 25%);
   grid-area: auto/1/-1/-1;
 }
 
@@ -484,6 +482,6 @@ nav a {
 }
 
 .tertiary-design .design span:nth-child(5) {
-  background: linear-gradient(100grad, rgba(255, 255, 255, 0.25) 5%, var(--secondary-design-primary-alpha-color) 25%);
+  background: linear-gradient(100grad, hsla(0, 0%, 100%, 0.25) 5%, var(--secondary-design-primary-alpha-color) 25%);
   grid-area: auto/1/-1/-1;
 }

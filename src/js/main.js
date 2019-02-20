@@ -2,13 +2,13 @@
  * @fileoverview main.js is used for adding base functionality to the
  *               scrollsjs.com website.
  * @author Rob Dukarski <rob@purplest.com> (https://github.com/RobDukarski)
- * @copyright 2018 Purplest, Inc.
- * @version 1.0.5
+ * @copyright 2019 Purplest, Inc.
+ * @version 1.0.6
  */
 
-const bttButton = document.querySelector('.js-btt');
+const bttButtons = document.querySelectorAll('.js-btt');
+const primaryBttButton = document.querySelector('body > .js-btt');
 const links = document.querySelectorAll('.js-nav a');
-const sectionBttButtons = document.querySelectorAll('.js-section-btt');
 const years = document.querySelectorAll('.js-year');
 
 /**
@@ -20,36 +20,47 @@ const backToTop = () => {
 };
 
 /**
- * Hides the back-to-top button.
+ * Hides the primary back-to-top button.
  */
 
 const hideBackToTop = () => {
-  if (window.pageYOffset < 20 && bttButton) {
-    bttButton.classList.remove('is--shown');
+  if (primaryBttButton) {
+    primaryBttButton.classList.remove('is--shown');
   }
 };
 
 /**
- * Shows the back-to-top button.
+ * Checks for primary back-to-top button and hides or shows it depending on the
+ * current vertical scroll offset.
+ */
+
+const initPrimaryBttButton = () => {
+  if (primaryBttButton) {
+    if (window.pageYOffset >= 20) {
+      showBackToTop();
+    } else {
+      hideBackToTop();
+    }
+  }
+};
+
+/**
+ * Shows the primary back-to-top button.
  */
 
 const showBackToTop = () => {
-  if (window.pageYOffset >= 20 && bttButton) {
-    bttButton.classList.add('is--shown');
+  if (primaryBttButton) {
+    primaryBttButton.classList.add('is--shown');
   }
 };
 
 /**
- * Listens for the scroll event to occur and updates the back-to-top button
+ * Listens for the scroll event to occur and updates the primary back-to-top button
  * accordingly.
  */
 
 window.addEventListener('scroll', () => {
-  if (window.pageYOffset < 20) {
-    hideBackToTop();
-  } else {
-    showBackToTop();
-  }
+  initPrimaryBttButton();
 });
 
 /**
@@ -58,23 +69,15 @@ window.addEventListener('scroll', () => {
  */
 
 (() => {
-  if (bttButton) {
-    bttButton.addEventListener('click', () => {
-      backToTop();
-    });
-
-    if (window.pageYOffset >= 20) {
-      bttButton.classList.add('is--shown');
-    }
-  }
-
-  if (sectionBttButtons) {
-    sectionBttButtons.forEach((button) => {
-      button.addEventListener('click', () => {
+  if (bttButtons) {
+    bttButtons.forEach((btn) => {
+      btn.addEventListener('click', () => {
         backToTop();
       });
     });
   }
+
+  initPrimaryBttButton();
 
   if (years) {
     years.forEach((year) => {

@@ -86,17 +86,14 @@ window.addEventListener('scroll', () => {
   }
 
   if (links) {
-    let linksCount = links.length;
+    links.forEach((link) => {
+      const section = link.getAttribute('href').replace('#', '');
 
-    for (let i = 0; i < linksCount; i++) {
-      let tempLink = links[i];
-      let tempSection = tempLink.getAttribute('href').replace('#', '');
-
-      tempLink.addEventListener('click', (e) => {
+      link.addEventListener('click', (e) => {
         e.preventDefault();
 
-        scrolls('.' + tempSection);
+        scrolls('.' + section);
       });
-    }
+    });
   }
 })();
